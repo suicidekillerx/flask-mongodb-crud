@@ -7,6 +7,6 @@ spec:
     app: test2-laravel
   ports:
     - port: 5000
-    targetPort: 5000
-    nodePort: 31701
+      targetPort: 5000
+      nodePort: 31701
   type: NodePort
