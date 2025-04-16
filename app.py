@@ -13,7 +13,7 @@ heading = "TODO Reminder with Flask and MongoDB"
 #db = client.Database_Name
 #table_var_name = db.table_name
 
-client = MongoClient("mongodb://mPNHZEJgGbE97H4x:k059FABWg4m2DUvD@10.11.241.41:58384/S6qOHHSP44Ux7RXa") #host uri
+client = pymongo.MongoClient("mongodb://mongodb:27017") #host uri
 db = client.S6qOHHSP44Ux7RXa                             #Select the database
 todos = db.todo                                   #Select the collection name
 
