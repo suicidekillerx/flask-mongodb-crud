@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test2-laravel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test2-laravel
+  template:
+    metadata:
+      labels:
+        app: test2-laravel
+    spec:
+      containers:
+        - name: test2-laravel
+          image: iyedhosni743/test2-laravel:latest
+          ports:
+            - containerPort: 80
