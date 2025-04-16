@@ -16,4 +16,4 @@ spec:
         - name: test2-laravel
           image: iyedhosni743/test2-laravel:latest
           ports:
-            - containerPort: 80
+             - containerPort: 5000
