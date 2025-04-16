@@ -66,7 +66,7 @@ def action ():
 	desc=request.values.get("desc")
 	date=request.values.get("date")
 	pr=request.values.get("pr")
-	todos.insert({ "name":name, "desc":desc, "date":date, "pr":pr, "done":"no"})
+	todos.insert_one({ "name":name, "desc":desc, "date":date, "pr":pr, "done":"no"})
 	return redirect("/list")
 
 @app.route("/remove")
