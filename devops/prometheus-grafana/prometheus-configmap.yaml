@@ -16,5 +16,5 @@ data:
 
         - job_name: 'node-exporter'
           static_configs:
-            - targets: ['master:9100', 'woker1:9100', 'worker2:9100']
+            - targets: ['node-exporter.monitoring.svc.cluster.local:9100']
 
