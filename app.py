@@ -3,6 +3,7 @@ from bson import ObjectId
 from pymongo import MongoClient
 import os
 import pymongo
+from flask import Flask
 
 app = Flask(__name__)
 cf_port = os.getenv("PORT")
@@ -10,7 +11,17 @@ cf_port = os.getenv("PORT")
 title = "TODO sample application with Flask and MongoDB"
 heading = "TODO Reminder with Flask and MongoDB"
 
-client = pymongo.MongoClient("mongodb://mongodb:27017")
+# MongoDB connection with retry
+while True:
+    try:
+        client = pymongo.MongoClient("mongodb://mongodb:27017", serverSelectionTimeoutMS=2000)
+        client.server_info()  # This will raise an exception if Mongo isn't ready
+        print("✅ Connected to MongoDB")
+        break
+    except Exception as e:
+        print("⏳ Waiting for MongoDB to be ready...")
+        time.sleep(3)
+
 db = client.S6qOHHSP44Ux7RXa
 todos = db.todo
 
