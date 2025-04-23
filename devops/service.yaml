@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: test2-laravel-service
+  name: 1st_pipline-service
 spec:
   selector:
-    app: test2-laravel
+    app: 1st_pipline
   ports:
     - port: 5000
       targetPort: 5000

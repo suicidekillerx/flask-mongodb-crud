@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test2-laravel
+  name: 1st_pipline
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test2-laravel
+      app: 1st_pipline
   template:
     metadata:
       labels:
-        app: test2-laravel
+        app: 1st_pipline
     spec:
       containers:
-        - name: test2-laravel
-          image: iyedhosni743/test2-laravel:latest
+        - name: 1st_pipline
+          image: iyedhosni20/1st_pipline:latest
           ports:
             - containerPort: 5000
