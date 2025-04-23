@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 1st_pipline
+  name: first-pipeline
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 1st_pipline
+      app: first-pipeline
   template:
     metadata:
       labels:
-        app: 1st_pipline
+        app: first-pipeline
     spec:
       containers:
-        - name: 1st_pipline
-          image: iyedhosni20/1st_pipline:latest
+        - name: first-pipeline
+          image: iyedhosni20/first-pipeline:latest
           ports:
             - containerPort: 5000
