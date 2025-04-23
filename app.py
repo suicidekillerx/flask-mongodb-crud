@@ -10,17 +10,7 @@ cf_port = os.getenv("PORT")
 title = "TODO sample application with Flask and MongoDB"
 heading = "TODO Reminder with Flask and MongoDB"
 
-# MongoDB connection with retry
-while True:
-    try:
-        client = pymongo.MongoClient("mongodb://mongodb:27017", serverSelectionTimeoutMS=2000)
-        client.server_info()  # This will raise an exception if Mongo isn't ready
-        print("✅ Connected to MongoDB")
-        break
-    except Exception as e:
-        print("⏳ Waiting for MongoDB to be ready...")
-        time.sleep(3)
-
+client = pymongo.MongoClient("mongodb://mongodb:27017")
 db = client.S6qOHHSP44Ux7RXa
 todos = db.todo
 
