@@ -3,7 +3,6 @@ from bson import ObjectId
 from pymongo import MongoClient
 import os
 import pymongo
-from flask import Flask
 
 app = Flask(__name__)
 cf_port = os.getenv("PORT")
